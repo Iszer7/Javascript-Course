@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*5) Programa una función que invierta las palabras de una cadena de texto, pe. 
+        miFuncion("Hola Mundo") devolverá "odnuM aloH".*/
+
+        const invertirPalabras = (texto ="") => 
+        (!texto)
+          ? console.warn("No ingresaste un texto")
+          : texto.split("").reverse().join("");             //Separa y lo pone en un array, lo invierte y lo vuelve a unir.
+
+        
+        console.log(invertirPalabras("Hola Mundo"));
+
+
+
+        
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+            /*Destructuracion
+            Sirve para sacar los valores de un array u objeto y ponerlo en variables
+            */
+            let numeros = [1,2,3];
+
+            const [one, two, three] = numeros;
+            console.log(one, two, three);
+
+            /************************/
+            let persona = {
+                nombre: "Diego",
+                apellido: "Kippes",
+                edad: 24
+            }
+
+            /*la variable se tienen que llamar de la misma forma
+             que la propiedad del objeto.
+             Tambien las variables tienen que estar ordenadas
+              */
+            let {nombre, apellido, edad} = persona;     
+            console.log(nombre,apellido,edad)
+
+
+        </script>
+    </body>
+</html>

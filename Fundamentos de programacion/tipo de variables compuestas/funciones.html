@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+
+
+
+
+            //Funciones
+
+            function estoEsUnaFuncion () {
+                console.log("Uno");
+                console.log("Dos");
+                console.log("Tres");
+            }
+
+            //Invocacion de funcion
+            /*estoEsUnaFuncion();
+            estoEsUnaFuncion();
+            estoEsUnaFuncion();*/
+
+            function unaFuncionQueDevuelveValor(){
+                console.log("Uno");
+                return 19;
+                console.log("Dos");
+                console.log("Tres");
+                return "La funcion ha retornado una Cadena";
+            }
+
+            //let valorDeFuncion = unaFuncionQueDevuelveValor();
+            //console.log(valorDeFuncion);
+
+            function saludar(nombre = "Desconocido", edad = 0) { //Con parametros
+                console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+            }
+
+            saludar("Diego",24);
+            saludar();      //Se puede poner en el parametro para que no salte undefined
+
+            
+            
+
+
+
+            //funciones declaradas VS funciones expresadas
+            /*En resumen, la declarada se puede invocar en cualquier lado. La expresada no puede ser invocada antes de ser declarada*/
+            
+            funcionDeclarada(); //La escribi antes de declararla (funcion holistic, es global)
+            
+            function funcionDeclarada() {
+                console.log("Esto es una funcion declara, puede invocarse en cualquier parte de nuestro codigo, incluso antes de que la funcion sea declarada");
+            }
+
+            funcionExpresada(); //No se puede acceder a la funcion porque la esta invocando antes de inicializarla
+
+            const funcionExpresada = function () {  //Funcion Anonima
+                console.log("Esto es una funcion expresada, es una funcion que se le ha asignado como valor una variable. Si invocamos esta funcion antes de su definicion JS nos dira...");
+            }
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

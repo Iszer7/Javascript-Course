@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        //GMT - 0600 quiere decir que esta 6hs menos que el meridiano de grenwitch (londres es hora 0)
+        let fecha = new Date();
+        console.log(fecha);                     //Muestra la fecha completa
+        console.log(fecha.getDate());           //Devuelve el dia del mes
+        console.log(fecha.getDay());            //Devuelve el dia de la semana (Domingo a Sabado -> 0,1,2,3,4,5,6)
+        console.log(fecha.getMonth());          //Enero es la posicion 0 -> Seria (0,1,2,3,4,5,6,7,8,9,10,11)
+        console.log(fecha.getFullYear());       //Año
+        console.log(fecha.getHours());          //Horas
+        console.log(fecha.getMinutes());        //Minutos
+        console.log(fecha.getSeconds());        //Segundos
+        console.log(fecha.getMilliseconds());   //Milisegundos
+        console.log(fecha.toDateString());      //Da la fecha en String
+        console.log(fecha.toLocaleString());    //Fecha en este formato ../../.. ..:..:..
+        console.log(fecha.toLocaleDateString());//Muestra solo la fecha
+        console.log(fecha.toLocaleTimeString());//Sola las horas, minutos, segundos
+        console.log(fecha.getTimezoneOffset()); //Muestra cuantos minutos esta atras de la hora 0 (GMT - 0000)
+        console.log(fecha.getUTCHours());       //Muestra que hora es en la hora 0 (londres) - meridiano
+        console.log(Date.now());                //Expresa cuantos milisegundos han pasado desde el 1ero de Enero de 1970 (Time Stamp), se suele usar en servidores
+        /*Date.now tambien serviria para calcular diferencias de tiempo entre una fecha y otra*/
+
+        /*Ejemplo*/
+        let cumpleDiego = new Date(1995,10,5);
+        console.log(cumpleDiego);
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*3) Programa una función que dada una String te devuelva un Array de textos separados por cierto caracter, pe. 
+        miFuncion('hola que tal', ' ') devolverá ['hola', 'que', 'tal'].*/
+
+        function miFuncion(cadena, cadenaSeparadora) {
+            let cadenaNueva = '';
+            const array = [];
+
+            for (const caracter of cadena) {
+                        
+                if (caracter === cadenaSeparadora) {
+                    array.push(cadenaNueva);
+                    cadenaNueva = '';
+                } else {
+                    cadenaNueva += caracter;
+                }
+                
+            }
+
+            if (cadenaNueva != '') {
+                array.push(cadenaNueva);
+            }
+
+            return console.log(array);
+        }
+
+        miFuncion('hola que tal como', ' ');
+
+        /*SOLUCION
+        const cadenaAArreglo = (cadena="",separador = undefined) =>
+          (!cadena)
+            ? console.warn("No ingresaste una cadena de texto")
+            : (separador === undefined)
+              ? console.warn("No ingresaste separador")
+              : console.info(cadena.split(separador));
+        */
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

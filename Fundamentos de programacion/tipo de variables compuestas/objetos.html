@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+
+            /*Dentro de un objeto a las variables se le llaman atributos/propiedades
+            A las funciones se le llama metodos*/
+
+            let a = new String("hola"); //String es un objeto
+
+            const b = {};
+            console.log(b);
+
+            //Mejor forma de escribir un objeto
+            //Un objeto puede contener variables como string, numeros, arrays, tambien tener dentro un objeto e incluso una funcion
+            const diego = {
+                nombre:"Diego",
+                apellido:"Kippes",
+                edad:24,
+                pasatiempos:["Calistenia","Piano","Dibujar"],
+                soltero: true,
+                contacto: {
+                    email:"kippes.diego@gmail.com",
+                    ig:"dykippes",
+                    celular:"1536588316"
+                },
+                saludar: function() {
+                    console.log("Hola!")
+                },
+                decirMiNombre: function () {        //This es el contexto donde nos encontramos, en este caso al objeto diego
+                    console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años. Me puedes seguir en ${this.contacto.ig} en ig.`);
+                }
+            }
+
+            console.log(diego);
+            console.log(diego["edad"]);             //Accede con corchete
+            console.log(diego.pasatiempos);         //Accede con un "punto ." -> es la mas aceptada
+            console.log(diego.pasatiempos[1]);      //Accede al array de pasatiempos
+            console.log(diego.contacto.email);      //Para acceder a un objeto dentro del objeto es con "punto"
+            diego.decirMiNombre();
+
+            console.log(Object.keys(diego));                //Es un metodo que me permite listar todas las llaves del objeto
+            console.log(Object.values(diego));              //Este metodo me da los valores
+            console.log(diego.hasOwnProperty("contacto"));  //Este metodo sirve para saber si existe una propiedad en el objeto
+            console.log(diego.hasOwnProperty("saludar"));
+            console.log(diego.hasOwnProperty("domicilio"));    
+
+
+
+
+
+        </script>
+    </body>
+</html>

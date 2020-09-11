@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+
+
+            //Clases -> Es azucar sintactico de los prototipos
+            class Animal {
+                /*El constructor es un metodo especial que se ejecuta en el momento de intanciar la clase*/
+                constructor(nombre,genero) {
+                    //Atributos
+                    this.nombre = nombre;
+                    this.genero = genero;
+                }
+            
+
+            //Metodos   -> Idealmente es mejor poner los metodos fuera de la clase porque ocuparia espacio en memoria
+                sonar() {
+                    console.log("Hago sonido porque estoy vivo");
+                }
+
+                saludar() {
+                    console.log(`Hola me llamo ${this.nombre}`);
+                }
+            }
+
+            class Perro extends Animal {       //extends sirve para decir de donde quiere que herede, en este caso de la clase Animal
+                constructor(nombre,genero,tamanio) {
+                    super(nombre,genero);                    //Super() manda a llamar al constructor de la clase padre
+                    this.tamanio = tamanio;
+                }
+
+                sonar() {
+                    console.log("Soy un perro y mi sonido es un ladrido");
+                }
+
+                ladrar() {
+                    console.log("wafff waff");
+                }
+            }
+
+            const mimi = new Animal("Mimi","Hembra");
+            const scooby = new Perro("Scooby","Macho","Gigante");
+
+            console.log(mimi);
+            console.log(scooby);
+            scooby.sonar();
+            scooby.ladrar();
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

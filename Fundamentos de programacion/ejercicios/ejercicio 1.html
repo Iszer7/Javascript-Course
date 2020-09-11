@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+        /*1) Programa una función que cuente el número de caracteres de una cadena de texto, pe.
+        miFuncion("Hola Mundo") devolverá 10.*/
+
+        function miFuncion (cadena) {
+               
+            typeof cadena === 'string'
+            ? console.log(cadena.length)  //Esta es la parte verdadera
+            : console.log("No es un string!"); //Esta es la parte falsa
+            
+        }
+        
+
+        miFuncion('hola mundo');
+
+        /*SOLUCION
+        
+        const contarCaracteres = (cadena = "") =>
+            (!cadena)
+                ? console.warn('No ingresaste ninguna cadena')
+                : console.info(`La cadena "${cadena}" tiene ${cadena.length} caracteres`);
+           
+        */
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

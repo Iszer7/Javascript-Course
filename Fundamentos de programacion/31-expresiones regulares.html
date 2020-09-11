@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        //Expresiones Regulares
+        /*
+        -Sirven para validar por ej, dn, tarjetas, correo electronicos, etc.
+        -Son una secuencia de caracteres que forman un patro
+        de busqueda, principalmente utilizada para la busqueda de 
+        patrones de cadenas de caracteres
+        
+        https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+        */
+
+        let cadena = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+
+        let expresionRegular = new RegExp("Dammy","ig");      //Pide el valor y la bandera (g - busca todas las coincidencias), (i - no le importa si es mayus o mins)
+        let expresionRegular2 = /Lorem/ig;
+
+        console.log(expresionRegular.test(cadena));
+        console.log(expresionRegular.exec(cadena));
+        console.log(expresionRegular2.test(cadena));
+        console.log(expresionRegular2.exec(cadena));
+
+
+
+
+    </script>
+  </body>
+</html>

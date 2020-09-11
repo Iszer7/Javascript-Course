@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe.
+         miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).*/
+        
+        const cuantosAniosPasaron = (fecha = undefined) => {
+            if (fecha === undefined) return console.warn("No ingreso fecha");
+            
+            if (! (fecha instanceof Date) ) return console.warn("No ingreso un valor de tipo valido");
+
+            let hoyMenosFecha = new Date().getTime() - fecha.getTime();
+            let aniosEnMs = (3.154e+10);       //Se puede escribir tambien = 1000 * 60 * 60 * 24 * 365
+            let aniosHumanos = Math.floor(hoyMenosFecha / aniosEnMs);
+
+            return (Math.sign(aniosHumanos) === -1)
+                ? console.info(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+                : (Math.sign(aniosHumanos) === 1)
+                    ? console.info(`Han pasado ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}`)
+                    : console.info(`Estamos en el año actual ${fecha.getFullYear()}`);
+        }
+        
+
+        cuantosAniosPasaron(new Date(1995,10,5));
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

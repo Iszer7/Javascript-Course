@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+            //Arrow function -> tiene el return implicito
+            //Es una nueva forma de definir functiones anonimas
+
+            const saludo = function () {    //Funcion anonima
+                console.log("Hola");
+            }
+
+            const greetings = () => {       //Arrow function
+                console.log("Hello");
+            }
+
+            //const greetings = () => console.log("Hi");                //Si tiene una sola linea
+
+            //const greetings = nombre => console.log(`Hi ${nombre}`);    //Si solo pide un parametro
+
+            const sumar = (a,b) => a + b;       //El return esta implicito
+            console.log(sumar(2,3));
+
+            const funcionDeVariasLineas = () => {
+                console.log("Uno");
+                console.log("Dos");
+                console.log("Tres");
+            }
+            
+            //Para llamar a forEach de array -> queda en 1 sola linea
+            const numeros = [1,2,3,4,5];
+
+            numeros.forEach((elemento,i) => console.log(`${elemento} esta en la posicion ${i}`));
+
+            //Tienen la capacidad de capturar el objeto en el contexto en que se encuentren (this, global, etc)
+
+            function Perro() {
+                console.log(this);
+            }
+            Perro();
+
+            const perro = {
+                nombre:"Frida",
+                ladrar: () => {         //Captura el contexto donde se encuentra, en este caso windows. Reconoce donde esta el objeto padre (ladrar() {} -> Asi si lo reconoce)
+                    console.log(this);  //No es un buena practica crear una arrow en un objeto
+                }
+            }
+            perro.ladrar();
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+
+            //Es la explicacion de lo que pasa internamente en una clase.
+            /*Funciones prototipos: Es un mecanismo por el cual puede heredar objetos, atributos, metodos y clases.
+            Herencia: hace una copia del prototipo en el cual esta basado
+             -> JS es un lenguaje prototipo cuando interpreta una clase esta lo interpreta en una funcion prototipo
+            */
+            
+            
+            //POO
+            /*
+            Clases -> Modelo a seguir, es un esquema que despues lo usan los objetos (lo copian)
+            Objeto(tiene atributos y metodos) -> Es una copia de ese modelo (clase), tambien se lo llama instancia que se utiliza en el mundo real
+                -Atributo: Es una caracteristica o propiedad del objeto (son variables dentro de un objeto)
+                -Metodos: Son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
+            */
+
+
+            //Este codigo no es funciona, por eso se usan las clases
+            const animal = {
+                nombre: "Snoopy",
+                sonar() {
+                    console.log("Hago sonidos porque estoy vivo");
+                }
+            }
+
+            const animal2 = {
+                nombre: "Lola Buny",
+                sonar() {
+                    console.log("Hago sonidos porque estoy vivo");
+                }
+            }
+
+            console.log(animal);    //El portotipo mas primitivo es "Objeto"
+            console.log(animal2);
+
+           //FUNCION CONSTRUCTORA -> Con el metodo adentro (no es recomendable)
+           function Animal (nombre,genero) {
+            //Atributos
+            this.nombre = nombre;           //this hace referencia a la misma funcion
+            this.genero = genero;
+
+            //Metodos
+            this.sonar = function () {                  //El this aca es necesario porque si se usa notacion de es6 agarraria como objeto padre a window
+                console.log("Hago sonidos porque estoy vivo");
+            }
+           }
+
+           //FUNCION CONSTRUCTORA -> Donde asignamos los metodos al prototipo no a la funcion como tal
+           function Animal (nombre,genero) {
+            //Atributos
+            this.nombre = nombre;           //this hace referencia a la misma funcion
+            this.genero = genero;
+
+           }
+
+           //Metodos (agregados al prototipo de la funcion constructura)
+           Animal.prototype.sonar = function () {                  //El this aca es necesario porque si se usa notacion de es6 agarraria como objeto padre a window
+                console.log("Hago sonidos porque estoy vivo");
+            }
+            Animal.prototype.saludar = function () {
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
+
+           const snoopy = new Animal("Snoopy","Macho");
+           const lolaBunny = new Animal("Lola Bunny","Hembra");
+           console.log(snoopy);             //Esta basado de la clase Animal, y su prototipo base es de un Objeto
+           console.log(lolaBunny);
+           snoopy.sonar();
+           snoopy.saludar();
+           
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

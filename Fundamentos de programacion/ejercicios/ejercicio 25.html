@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+        /*25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. 
+        miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].*/
+
+        const elementoDuplicado = (array = undefined) => {
+          if (array === undefined) return console.warn("No ingreso un array");
+          
+          if (!(array instanceof Array)) return console.warn("No es un tipo array");
+
+          if (array.length === 0) return console.error("El arreglo esta vacio");
+
+          if (array.length === 1) return console.error("El arreglo debe tener al menos 2 elementos");
+
+          let arrayNuevo = [];
+          let bandera = 0;
+
+          for (const elem of array) {
+            for (let i = 0; i < arrayNuevo.length; i++) {
+              if (elem === arrayNuevo[i]) {
+                bandera = 1;
+              }
+            }
+
+            if (bandera !== 1) {
+              arrayNuevo.push(elem);
+            }
+            bandera = 0;
+          }
+
+          return console.info(arrayNuevo);
+          
+          /*SOLUCION MIRCHA
+          
+            return console.info({
+              original: array,
+              sinDuplicados: array.filter((value, index, self) => self.indexOf(value) === index)
+            })
+          */
+          
+        }
+
+        elementoDuplicado(["x", 10, "x", 2, "10", 10, true, true]);
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

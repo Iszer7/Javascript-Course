@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*19) Programa una función que valide que un texto sea un nombre válido, pe. 
+        miFuncion("Jonathan MirCha") devolverá verdadero.*/
+
+        const validarNombre = (nombre = "") => {
+          if (!nombre) return console.warn("No escribio texto");
+          /* ^ -> no puede haber nada antes de la expresion 
+             $ -> no puede haber nada despues 
+             el + y [] es para que evalue cada caracter 
+             \s -> para espacios en blanco*/
+             
+          let expRegularNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(nombre);    
+
+          return (expRegularNombre)
+            ? console.info(`"${nombre}" es un nombre valido`)
+            : console.info(`"${nombre}" NO es un nombre valido`);
+
+        }
+
+        validarNombre("Diego Kippes");
+
+
+
+
+
+    </script>
+  </body>
+</html>

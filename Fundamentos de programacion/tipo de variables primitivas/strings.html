@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+      //Cadena de texto
+
+      let nombre = "Diego";
+
+      let lorem =
+        "                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+      //Es una declaracion mas formal
+      let saludo = new String("Hola Mundo");
+
+      console.log(nombre, saludo);
+      console.log(
+        nombre.length,
+        saludo.length,
+      );
+
+      console.log(
+        nombre.toUpperCase, //Todo en mayusculas
+        saludo.toLowerCase, //Todo en minusculas
+      );
+
+      console.log(
+        lorem.includes("dummy")     //Busca la palabra "dummy" en la variable lorem
+      );
+
+      console.log(
+        lorem.trim()                //Saca los espacios del principio
+      );
+
+      console.log(
+          lorem.split(" ")          //Genera un array usando el "espacio"
+      )
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

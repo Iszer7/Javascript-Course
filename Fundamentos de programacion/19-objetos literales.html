@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+            let nombre = "Frida", edad = 7;
+
+            //JS vanilla - objeto creado sin es6
+
+            const perro = {
+                nombre: nombre,
+                edad: edad,
+                ladrar: function() {
+                    console.log("gua gua");
+                }
+            }
+
+            //Objeto literal (es6) -> es una forma de crear objetos, mas actualizada
+            const dog = {
+                nombre,
+                edad,
+                raza: "Casero",
+                ladrar () {
+                    console.log("WAF!!");
+                }
+            }
+
+            console.log(dog);
+            dog.ladrar();
+
+
+
+
+
+        </script>
+    </body>
+</html>

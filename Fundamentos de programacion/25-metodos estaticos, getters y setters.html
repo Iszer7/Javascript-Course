@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+      class Perro  {
+            constructor(nombre,genero){
+                this.nombre = nombre;
+                this.genero = genero;
+                this.raza = null;
+            }     
+
+                      
+
+        //Metodo estatico se puede ejecutar sin necesidad de instanciar la clase (osea, crearla)
+            static queEres() {
+                console.log("Los perros pertenecen a la familia de los caninos.");
+            }
+      
+      
+
+
+        //Los setters y getters son metodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+            get getRaza() {             //Se pone get para identificar que la funcion va usar el metodo obtenedor (get)
+                return this.raza;
+            }
+
+            set setRaza(raza) {             //Metodo establecedor (set), que modifica dicha propiedad
+                this.raza = raza;
+            }
+        }
+
+        const scooby = new Perro("Scooby","Macho");
+
+        Perro.queEres();
+        //Aunque es una funcion JS lo trata como si fuera un atributo/propiedad
+        console.log(scooby.getRaza);            //Manda NULL
+        scooby.setRaza = "Gran Danes";          //Se lo pasa como un atributo (uso el SET)
+        console.log(scooby.getRaza);
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

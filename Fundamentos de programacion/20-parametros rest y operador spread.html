@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+            /*REST (es los 3 puntos suspensivos) - es un parametro
+            Lo que hace es sumar a +b, pero si hay un tercer valor 
+            o hace la suma total
+            */
+            
+            function sumar(a,b, ...c) {
+                let resultado = a + b;
+
+                c.forEach(function (n) {
+                    resultado += n;
+                });
+
+                return resultado;
+            }
+
+            console.log(sumar(1,2));
+            console.log(sumar(1,2,3));
+            console.log(sumar(1,2,3,4));
+            console.log(sumar(1,2,3,4,5));
+            console.log(sumar(1,2,3,4,5,6));
+            console.log(sumar(1,2,3,4,5,6,7));
+
+            /*SPREAD (es los 3 puntos suspensivos) - se puede usar en cualquier parte del codigo
+            Por ejemplo serviria para arrays en un solo array
+
+            */
+            console.log("SPREAD");
+
+            const arr1 = [1,2,3,4,5], arr2 = [6,7,8,9,0];
+
+            const arr3 = [...arr1,...arr2];
+            console.log(arr3);
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

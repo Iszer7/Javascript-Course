@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+            //Estructuras condicionales
+            /*Estructura If*/
+            let edad = 24;
+
+            if (edad > 17) {
+                console.log("Es mayor de edad");
+            } else {
+                console.log("Es menor de edad");
+            }
+
+            /*if - else if - else*/
+            /*
+            dejame dormir 0hs - 5hs
+            buenos dias 6hs - 11hs
+            buenas tardes 12hs - 18hs
+            buenas noches 19hs - 23hs
+            */
+            let hora = 7;
+
+            if(hora >= 0 && hora <= 5) {
+                console.log("Dejame dormir");
+            } else if (hora >= 6 && hora <= 11) {
+                console.log("Buenos dias");
+            } else if (hora >= 12 && hora <= 18) {
+                console.log("Buenas noches");
+            } else {
+                console.log("Buenas noches");
+            }
+
+
+            /*Operador ternario, simplificacion del if else*/
+            // (condicion) ? verdadero : falsa
+            console.log("Operador ternario");
+            let eresMayor = (edad >= 18) 
+            ? "Eres mayor de edad"  //Esta es la parte verdadera
+            : "Eres menor de edad"; //Esta es la parte falsa
+            console.log(eresMayor);
+
+
+            /*switch - case*/
+            /*
+            0 - domingo
+            1 - lunes
+            2 - martes
+            3 - miercoles
+            4 - jueves
+            5 - viernes
+            6 - sabado
+            */
+            let dia = 2;
+
+            switch (dia) {
+                case 0:
+                    console.log("Domingo");
+                    break;                  //Break corta la ejecucion del codigo, si la omitimos la palabra continua al proximo case hasta que se salga
+                case 1:
+                    console.log("Lunes");
+                    break;
+                case 2:
+                    console.log("Martes");
+                    break;
+                case 3:
+                    console.log("Miercoles");
+                    break;
+                case 4:
+                    console.log("Jueves");
+                    break;
+                case 5:
+                    console.log("Viernes");
+                    break;
+                case 6:
+                    console.log("Sabado");
+                    break;
+                default:
+                    console.log("El dia no existe");
+                    break;
+            }
+
+
+            
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe.
+         miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].*/
+
+        const maxMinArray = (array = undefined) => {
+          if (array === undefined) return console.warn("No ingreso un array");
+          
+          if (!(array instanceof Array)) return console.warn("No es un tipo array");
+
+          if (array.length === 0) return console.error("El arreglo esta vacio");
+
+          for (let num of array) {
+            if (typeof num !== 'number') return console.error(`El valor ${num} ingresado no es un numero`);
+          }
+
+          /*SOLUCION MIRCHA
+
+          return console.info(`Arreglo original: ${array}\nValorMayor: ${Math.max(...array)},\nValor Menor: ${Math.min(..array)}`);
+          
+          
+          // \n para hacer un enter
+          //El Math.max o Math.min busca el maximo/minimo en array, si no lo paso como spread operator "...array" no recorre el array y tira "NaN"
+          */
+
+          let max = 0, min = 0;
+          let arrayMinMax = [];    
+
+          for (let i = 0; i < array.length; i++) {
+            if (i === 0) {
+              max = array[i];
+              min = array[i];
+            }
+            if (array[i] > max) {
+              max = array[i]
+            }
+            if (array[i] < min) {
+              min = array[i];
+            }
+          }
+          arrayMinMax.push(max, min);
+          
+
+          return console.info(arrayMinMax);
+        }
+
+        maxMinArray([1, 4, 5, 99, -60]);
+
+
+
+
+    </script>
+  </body>
+</html>

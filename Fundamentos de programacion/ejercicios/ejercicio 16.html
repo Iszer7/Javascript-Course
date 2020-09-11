@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe.
+         miFuncion(1000, 20) devolverá 800.*/
+        
+        const descuento = (pago = undefined, descuento = 0) => {
+            if (pago === undefined) return console.warn("No ingreso pago!");
+            if (typeof pago !== 'number') return console.warn("El valor ingresado NO es un numero");
+            if (!descuento) return console.warn("No ingreso descuento!");
+            if (typeof descuento !== 'number') return console.warn("El valor ingresado NO es un numero");
+            if (Math.sign(pago) === -1) return console.warn("Ingrese pago positivo");
+            if (Math.sign(descuento) === -1) return console.warn("Ingrese descuento positivo");
+            if (descuento > 100) return console.error("El descuento no puede ser mayor a 100");
+            
+            return console.info(`$${pago} - ${descuento}% = $${pago - (descuento * pago) /100}`);
+        }
+
+        console.info(descuento(1000,20));
+
+
+
+
+
+    </script>
+  </body>
+</html>

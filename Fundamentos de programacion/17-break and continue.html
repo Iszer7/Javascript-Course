@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+            /*El break rompe la estructura y sale del loop
+            El continue rompe la vuelta en el 6, osea la salta
+            */
+
+            const numeros = [1,2,3,4,5,6,7,8,9,0];
+
+            console.log("BREAK");
+
+            for (let i = 0; i < numeros.length; i++) {
+                if (i === 5) {
+                    break;    
+                }
+                console.log(numeros[i]);
+            }
+
+            console.log("CONTINUE");
+
+            for (let i = 0; i < numeros.length; i++) {
+                if (i === 5) {
+                    continue;    
+                }
+                console.log(numeros[i]);
+            }
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

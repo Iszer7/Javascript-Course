@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+            //El try evalua el codigo, apenas hay un error lo manda al catch y deja de ejecutarse el codigo
+            try {
+                console.log("En el try se agrega el codigo a evaluar");
+                noExiste;       //Aca no se declaro la variable, entonces lanza el catch
+                console.log("Segundo mensaje en el try");
+            } catch (error) {
+                console.log("Catch captura cualquier error surgido o lanzado en el try");
+                console.log(error);     //Nos dice cual fue el problema
+            } finally {
+                console.log("El bloque finally se ejecutara siempre al final de un bloque try-catch");
+            }
+
+
+            //Ejemplo
+            try {
+                let numero = "y";
+                if (isNaN(numero)) {
+                    throw new Error("No es un numero");      //Sirve para decirle a un usuario que se esta equivocando
+                }
+
+                console.log(numero * numero);
+            } catch (error) {
+                console.log(`Se produjo el siguiente error: ${error}`);
+            }
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

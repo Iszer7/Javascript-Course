@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe.
+         miFuncion(0,"C") devolverá 32°F.*/
+
+        const convercionDeGrados = (grados = undefined, unidad = undefined) => {
+          if (grados === undefined) return console.warn("No ingreso grados!");
+
+          if(typeof grados !== "number") return console.error("Escriba cantidad de grados");
+            
+          if (unidad === undefined) return console.warn("Ingrese una unidad");
+
+          if(typeof unidad !== "string") return console.error("Escriba unidad!");
+
+          /*if(unidad.length !== 1 || !/(C|F)/.test(unidad)) return console.warn("Valor de unidad no reconocido");*/      //Si no uso el switch puedo usar una expresion regular para validar la unidad
+
+            switch(unidad) {
+                case "F":   return console.info(`La conversion de ${grados}°C = ${Math.round((grados * 9/5) + 32)}°F `);
+                            break;
+                case "C":   console.info(`La conversion de ${grados}°F = ${Math.round((grados - 32) * 5/9)}°C `); 
+                            break;
+                default:    console.error("Escriba C para convertir a Celcious o F para convertir a Fahrenheit");
+                            break;
+            }
+            
+        }
+
+        console.info(convercionDeGrados(53, "C"));
+
+
+
+
+    </script>
+  </body>
+</html>

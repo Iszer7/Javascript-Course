@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*13) Programa una función que determine si un número es par o impar, pe.
+         miFuncion(29) devolverá Impar.*/
+
+        const esPar = (numero = undefined) => {
+        if (numero === undefined) return console.warn("Escriba un numero");
+
+        if(typeof numero !== "number") return console.error("Escriba un numero!!");
+
+        return (numero % 2 === 0)
+          ? console.info("Es par")
+          : console.info("Es impar"); 
+                
+        }
+            
+        esPar(-21);
+
+
+
+
+    </script>
+  </body>
+</html>

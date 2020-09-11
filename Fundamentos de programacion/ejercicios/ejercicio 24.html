@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, 
+        el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe.
+         miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.*/
+
+        const arrayAscendenteYDescendente = (array = undefined) => {
+          if (array === undefined) return console.warn("No ingreso un array");
+          
+          if (!(array instanceof Array)) return console.warn("No es un tipo array");
+
+          if (array.length === 0) return console.error("El arreglo esta vacio");
+
+          for (let num of array) {
+            if (typeof num !== 'number') return console.error(`El valor ${num} ingresado no es un numero`);
+          }
+
+          const arrayAscDes = {
+            asc: [],
+            desc: []
+          }
+          
+          for (const elemt of array) {
+            arrayAscDes.asc.push(elemt);
+            arrayAscDes.desc.push(elemt);
+          }
+          arrayAscDes.asc.sort();
+          arrayAscDes.desc.sort().reverse();
+
+          return console.info(arrayAscDes);
+
+          /*SOLUCION MIRCHA
+          
+          return console.info({
+            array,
+            asc: array.map(el => el).sort(),
+            desc: array.map(el => el).sort().reverse()
+          });
+          */  
+            
+        }
+
+        arrayAscendenteYDescendente([7, 5,7,8,6]);
+        
+
+        
+
+
+
+    </script>
+  </body>
+</html>

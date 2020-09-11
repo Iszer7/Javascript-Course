@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Asincronia en JavaScript</h1>
+    <script>
+
+
+
+
+
+      //El setTimeout recibe un callback y recibe un tiempo expresado en milisegundos. 3000 es 3 segundos, despues de haber pasado 3 segundos se ejecuta
+      console.log("inicio");
+      setTimeout(() => {
+        console.log("Ejecutando un setTimeout, esto se ejecuta una sola vez");
+      }, 2000);
+
+
+      //El setInterval recibe un callback y ejecuta cada X tiempo un bloque de codigo
+      setInterval(() => {
+        //console.log("Ejecutando un setInterval, esto se ejecuta indefinidamente cada cierto intervalo de tiempo");
+      }, 3000);
+
+
+      //Ejecuta el reloj en consola cada segundo, 1000ms es 1 segundo
+      setInterval(() => {
+        //console.log(new Date().toLocaleTimeString())
+      }, 1000);
+      
+
+      //Funciones para cancelar el setTimeout, este debe ser guardado en una variable
+      let temporizado = setTimeout(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+
+      clearTimeout(temporizado);
+
+       //Funciones para cancelar el setInterval, este debe ser guardado en una variable
+       let temporizado2 = setInterval(() => {
+        console.log(new Date().toLocaleTimeString());
+      }, 1000);
+
+      clearInterval(temporizado2);
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+
+      //console
+      console.log(console); //Registro de lo que ha pasado en la app
+      console.error("esto es un ERROR BRO!"); //Aca manda un error, en rojo
+      console.warn("Esto es un aviso!!!!!"); //Warning
+      console.info("Esto es un mensaje informativo");
+
+      /****************************/
+      let nombre = "Diego",
+        apellido = "Kippes",
+        edad = 24;
+
+      console.log(`Hola mi nombre es ${nombre} y mi apellido ${apellido}`);
+      console.log(`Hola mi nombre es %s %s, y tengo %d`, nombre, apellido, edad); //Se puede pasar variables de esta forma
+
+      console.log(window); //Muestra todas las propiedades de ese objeto window
+      console.log(document); //DOM
+      console.dir(document); //Muestra todos los atributos/propiedades o metodos del objeto
+
+      console.clear(); //Borra toda la consola
+
+      /*Agrupando en console (group)*/
+      console.group("Los cursitos de JS @pepino");
+      console.log("Curso de calabazas");
+      console.log("Curso de anda a caminar");
+      console.log("Curso de gorditos");
+      console.log("Curso de cursos y mas cursos");
+      console.groupEnd(); //Para dar por terminado el grupo
+
+      /*Agrupando en console (groupCollapsed) En chrome da igual, hace lo mismo que group*/
+      console.groupCollapsed("Los cursitos de JS @pepino");
+      console.log("Curso de calabazas");
+      console.log("Curso de anda a caminar");
+      console.log("Curso de gorditos");
+      console.log("Curso de cursos y mas cursos");
+      console.groupEnd(); //Para dar por terminado el grupo
+
+        /*MOSTRAR COMO TABLA*/
+        console.log(console);       //Normal
+        console.table(Object.entries(console).sort());  //En forma de tabla, y ordenada por sort
+
+        //Con ARRAY
+        const numeros = [1,2,3,4,5];
+        const vocales = ['a','e','i','o','u'];
+        console.table(numeros, vocales);
+        console.table(vocales);
+
+        //Con OBJETOS
+        const perro = {
+            nombre: "Frida",
+            raza: "Ovejero Aleman Belga",
+            color: "Negro"
+        }
+        console.table(perro);
+
+        //COMO SABER CUANTO TARDA UN FUNCION? USAR .TIME
+        //-- La bandera inicial y final tienen que llamarse igual, en este caso es 'Cuanto tiempo tarda mi codigo'
+        console.time('Cuanto tiempo tarda mi codigo');
+        const arreglo = Array(1000000);
+        for(let i=0; i < arreglo.length; i++) {
+            arreglo[i] = i;
+        }
+
+        console.timeEnd('Cuanto tiempo tarda mi codigo');
+
+        /*CUANTAS VECES A EJECUTADO UN PARTE DEL CODIGO?*/
+        for(let i=0; i <= 100; i++) {
+            console.count("codigo for");
+            console.log(i);
+        }
+
+        /*MINI LIBRERIA PARA TESTEAR CODIGO*/
+        let x = 3, y = 2, pruebaXY = "Se espera que X siempre sea menor que Y";
+        console.assert(x < y, {x, y, pruebaXY});    //Al principio es la condicion, luego {} dentro se escriben las variables a testear
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

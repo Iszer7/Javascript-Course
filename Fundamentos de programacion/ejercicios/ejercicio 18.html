@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+        /*18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe.
+         miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.*/
+
+        const contadorVocales = (texto = "") => {
+          if (!texto) return console.warn("No escribio texto");
+          if (typeof texto !== 'string') return console.error("El valor ingresado no es un string");
+
+          let contadorVocal = 0, contadorConsonantes = 0;
+
+          for (const letra of texto.toLowerCase()) {
+            switch (letra) {
+              case 'a': contadorVocal++;
+                        break;
+              case 'e': contadorVocal++;
+                        break;
+              case 'i': contadorVocal++;
+                        break;
+              case 'o': contadorVocal++;
+                        break;
+              case 'u': contadorVocal++;
+                        break;
+              default:  if (letra !== ' ') {
+                          contadorConsonantes++;
+                        } 
+                        break;                        
+            }
+          }
+            //SOLUCION MIRCHA
+               /*         
+            for (let letra of texto) {
+              if (/[AEIOUÁÉÍÓÚÜaeiouáéíóúü]/.test(letra)) contadorVocal++;
+              
+
+              if (/[BCDFGHJKLMNÑPQRSTVWXYZbcdfghjklmnñpqrstvwyz]/.test(letra)) contadorConsonantes++;
+            }*/
+
+
+              return console.info({
+                texto: texto,
+                vocales: contadorVocal,
+                consonantes: contadorConsonantes
+              });
+        }
+
+        contadorVocales("Diego Kippes");
+
+
+
+
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+
+             //Herencia es la capacidad de heredar caracteristicas de un padre a un hijo
+             /*
+             */
+            function Animal (nombre,genero) {
+            //Atributos
+                this.nombre = nombre;           //this hace referencia a la misma funcion
+                this.genero = genero;
+
+            }
+
+            //Metodos
+            Animal.prototype.sonar = function () {                  //El this aca es necesario porque si se usa notacion de es6 agarraria como objeto padre a window
+                console.log("Hago sonidos porque estoy vivo");
+            }
+            Animal.prototype.saludar = function () {
+                console.log(`Hola me llamo ${this.nombre}`);
+            }
+
+            //Herencia Prototipica
+            function Perro(nombre,genero,tamanio) {
+                this.super = Animal;            //Invoca el constructor animal
+                this.super(nombre,genero);
+                this.tamanio = tamanio;
+
+            }
+
+            //Perro esta heredando de Animal
+            Perro.prototype = new Animal();
+            Perro.prototype.constructor = Perro;
+
+            //Sobreescritura de metodos del Prototipo padre en el hijo
+            Perro.prototype.sonar = function () {
+                console.log("Soy un perro y mi sonido es un ladrido");
+            }
+
+            Perro.prototype.ladrar = function () {
+                console.log("Waff wafff");
+            }
+
+
+            /*Mostrando en consola*/
+            const snoopy = new Perro("Snoopy","Macho","Mediano");
+            const lolaBunny = new Animal("Lola Bunny","Hembra");
+            console.log(snoopy);        //En la consola muestra como el prototipo del que hereda es Animal     
+            snoopy.saludar();
+            snoopy.sonar();
+            snoopy.ladrar();
+            console.log(lolaBunny);     //En este caso la herencia no es Perro, aca se muestra el prototipo Objeto
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

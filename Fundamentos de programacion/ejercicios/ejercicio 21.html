@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe.
+         mi_funcion([1, 4, 5]) devolverá [1, 16, 25].*/
+
+        const arrayAlCuadrado = (array = undefined) => {
+          if (array === undefined) return console.warn("No ingreso un array");
+          
+          if (!(array instanceof Array)) return console.warn("No es un tipo array");
+
+          if (array.length === 0) return console.error("El arreglo esta vacio");
+
+          for (let num of array) {
+            if (typeof num !== 'number') return console.error(`El valor ${num} ingresado no es un numero`);
+          }
+
+          /*SOLUCION MIRCHA
+
+          const newArr = arr.map(el => el * el);          //MAP me permite generar un nuevo arreglo a partir de uno original
+
+          */
+
+          let arrayCuadrado = [];
+
+          for (let i = 0; i < array.length; i++) {
+            arrayCuadrado[i] = array[i] * array[i];
+          }
+
+          return console.info(arrayCuadrado);
+        }
+
+        arrayAlCuadrado([1,4,5]);
+
+
+
+
+    </script>
+  </body>
+</html>

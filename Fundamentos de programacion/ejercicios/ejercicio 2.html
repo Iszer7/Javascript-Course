@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*2) Programa una función que te devuelva el texto recortado según el número de caracteres indicados, pe.
+        miFuncion("Hola Mundo", 4) devolverá "Hola".*/
+
+
+        function miFuncion(cadena, numero) {
+            let cadenaNueva = '';
+
+            let i = 0;
+            for (const caracter of cadena) {                
+                if (i == numero) {
+                    return console.log(cadenaNueva);
+                }
+                cadenaNueva += caracter;
+                i++;
+            }
+        }
+
+        miFuncion('hola mundo', 6);
+
+        /*SOLUCIO
+        const recortarTexto = (cadena="",longitud = undefined) =>
+          (!cadena)
+            ? console.warn("No ingresaste una cadena de texto")
+            : (longitud === undefined)
+              ? console.warn("No ingresaste la longitud para recortar el texto")
+              : console.info(cadena.slice(0, longitud));        
+        */
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

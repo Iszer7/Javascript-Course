@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*20) Programa una función que valide que un texto sea un email válido, pe. 
+        miFuncion("jonmircha@gmail.com") devolverá verdadero.
+        
+        La expresión regular que uso para el email en este video /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i*/
+
+        const validacionEmail = (email = "") => {
+          if (!email) return console.warn("No escribio un mail");
+
+          let expRegularEmail = /^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);      //Nombre + @ + servidor + dominio
+
+          return (expRegularEmail)
+            ? console.info(`"${email}", es un email valido`)
+            : console.info(`"${email}", NO es un email valido`);
+        }
+
+        console.info(validacionEmail("kippes.diego@gmail.com"));
+
+
+
+
+
+    </script>
+  </body>
+</html>

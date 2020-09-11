@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*6) Programa una función para contar el número de veces que se repite una palabra en un texto largo, pe.
+         miFuncion("hola mundo adios mundo", "mundo") devolverá 2.*/
+
+        const contadorDePalabras = (texto = "", palabra = "") => {
+          let contador = 0;
+
+          if (!texto) return console.warn("No ingresaste un texto");
+          if (!palabra) return console.warn("No ingresaste palabra a buscar");
+
+          /*SOLUCION DE MIRCHA
+          let i = 0;
+
+            while (i !== -1) {
+              i = cadena.indexOf(texto,i);
+
+              if(i !== 1) {
+                i++;
+                contador++;
+              }
+            }
+          */
+
+          for (const elemento of texto.split(" ")) {
+            if (elemento === palabra) {
+              contador++;
+            }
+          }
+          
+          return console.info(`La palabra ${palabra} se repite en el texto ${contador} veces`);
+        }
+
+        console.log(contadorDePalabras("hola mundo adios mundo", "mundo"));
+
+
+    </script>
+  </body>
+</html>

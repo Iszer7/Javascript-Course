@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*4) Programa una función que repita un texto X veces, pe. 
+        miFuncion('Hola Mundo', 3) devolverá Hola Mundo Hola Mundo Hola Mundo.*/
+
+        function miFuncion (cadena, loop) {
+            let cadenaNueva = '';
+
+            for(let i=0; i < loop; i++) {
+                if (i === 0) {
+                    cadenaNueva += cadena;
+                } else {
+                    cadenaNueva += ' ' + cadena;
+                }
+                
+            }
+            return console.log(cadenaNueva);
+        }
+
+        miFuncion('Hola Mundo', 2);
+
+
+        /*SOLUCION
+          const repetirTexto = (texto = "", veces = undefined) => {
+            if (!texto) return console.warn("No ingresaste texto");
+              
+            if (!veces === undefined) return console.warn("No ingresaste cantidad de veces");
+            
+            if (!veces === 0) return console.error("El numero de veces no puede ser 0");
+
+            if (Math.sign(veces) === -1) return console.error("El numero de veces no puede ser negativo");
+
+            for (let i = 1; i <= veces; i++) console.info(`${texto}, ${i}`);
+            
+          }
+        */
+
+
+
+        
+
+
+    </script>
+  </body>
+</html>

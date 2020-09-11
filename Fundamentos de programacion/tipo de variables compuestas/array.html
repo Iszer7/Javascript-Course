@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fundamentos de JS</title>
+    </head>
+
+    <body>
+        <h1>MDN -> para ver documentacion de javascript</h1>
+        <h4>Una propiedad de un objeto es una descripcion</h4>
+        <h4>Un metodo de un objeto es una accion</h4>
+        <script>
+
+
+
+
+
+            //Array
+            const a = [];
+            const b = [1,true,"hola",["A","B","C",[1,2,3]]];
+
+            console.log(a);
+            console.log(b);
+            console.log(b.length);      // 4
+            console.log(b[2]);          //Imprime hola
+            console.log(b[3][2]);       //Imprime la C
+            console.log(b[3][3][1]);    //Imrpime 2
+
+            const c = Array.of("X","Y","Z",9,8,7);    //Objeto de array (es6)
+            console.log(c);
+
+            const d = Array(100).fill(false);           //llena 100 posiciones con el valor de "false"
+            console.log(d);
+
+            const e = new Array();                  //No se suele usar
+            console.log(e);
+
+            const f = new Array(1,2,3,true,false);  //Poco usada
+            console.log(f);
+
+            //Agrega mas al array
+            const colores = ["Rojo", "Verde", "Azul"];
+            console.log(colores)
+
+            colores.push("Negro");          //Agrega un elemento al final
+            console.log(colores);
+            colores.pop();                  //Borra el elemento final
+            console.log(colores);
+
+            //Recorrer un array. Index es I, el iterador.
+            colores.forEach(function (elemento, index) {
+                console.log(`<li id="${index}">${elemento}</li>`);
+            });
+
+
+
+
+
+
+
+
+        </script>
+    </body>
+</html>

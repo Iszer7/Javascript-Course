@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*7) Programa una función que valide si una palabra o frase dada, es un palíndromo
+         (que se lee igual en un sentido que en otro), pe. mifuncion("Salas") devolverá true.*/
+
+      const palindromo = (palabra = "") => {
+        let palindromo = palabra.split("").reverse().join("");
+        
+        if (!palabra) return console.warn("Escriba una palabra");
+
+        /*SOLUCION MIRCHA
+        return (palindromo.toLowerCase() === palabra.toLowerCase())
+          ? console.info("La palabra es un palindromo")
+          : console.info("La palabra NO es un palindromo");
+        */
+        
+        if (palindromo.toLowerCase() === palabra.toLowerCase()) {
+          console.info("La palabra es un palindromo");
+        } else {
+          console.info("La palabra NO es un palindromo");
+        }
+      }
+
+      palindromo("Salas");
+
+      
+
+
+    </script>
+  </body>
+</html>

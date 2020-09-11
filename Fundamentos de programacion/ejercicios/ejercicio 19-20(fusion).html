@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+        /*Fusion 19 - 20*/
+
+        const validarPatron = (cadena = "", patron = undefined) => {
+          if (!cadena) return console.warn("No escribio una cadena");
+          if (typeof cadena !== 'string') return console.warn("No ingreso un tipo string");
+          if (patron === undefined) return console.warn("No escribio un patron");
+          if (!(patron instanceof RegExp)) return console.warn("No ingreso un patron de tipo expresion regular");
+
+          let expRegular = patron.test(cadena);      
+
+          return (expRegular)
+            ? console.info(`"${cadena}", es un patron valido`)
+            : console.info(`"${cadena}", NO es un patron valido`);
+        }
+
+        validarPatron("kippes.diego@gmail.com",/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i);
+        validarPatron("Diego Kippes",/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g);
+        validarPatron("kippes.diego@com",/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i);
+        validarPatron("Diego Kip13pes",/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g);
+
+
+
+
+
+    </script>
+  </body>
+</html>

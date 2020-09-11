@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*8) Programa una función que elimine cierto patrón de caracteres de un texto dado, pe. 
+        miFuncion("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz") devolverá  "1, 2, 3, 4 y 5.*/
+
+      const eliminarPatron = (texto = "", patron = "") => {
+        if(!texto) return console.warn("Escriba un texto");
+        if (!patron) return console.warn("Escriba un patron");
+
+        console.info(texto.replace(new RegExp(patron, "ig"), ""));        //Expresion regular
+      }
+
+      eliminarPatron("xyz1, xyz2, xyz3, xyz4 y xyz5", "xyz");
+
+
+
+
+
+    </script>
+  </body>
+</html>

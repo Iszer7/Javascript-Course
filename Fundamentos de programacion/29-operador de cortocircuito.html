@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Fundamentos de JS</title>
+  </head>
+
+  <body>
+    <h1>MDN -> para ver documentacion de javascript</h1>
+    <h4>Una propiedad de un objeto es una descripcion</h4>
+    <h4>Un metodo de un objeto es una accion</h4>
+    <script>
+
+
+
+
+
+
+        /*
+        Cortocircuito OR - Cuando el valor de la izquierda
+        en la expresion siempre pueda valida a true, es el
+        valor que se cargara por defecto
+        
+        Cortocircuito AND - Cuando el valor de la izquierda
+        en la expresion siempre pueda validar a false, es el
+        valor que se cargara por defecto*/
+
+        //OR
+        console.log("cadena" || "Valor de la derecha"); //Siempre que el de la izquierda sea, numero, string, array o true etc. Va a tomar el valor de la izquierda
+        console.log(19 || "Valor de la derecha");
+        console.log([] || "Valor de la derecha");
+        /*null, undefined, 0, false tienden a falso*/
+        console.log(false || "Valor de derecha");
+
+
+        //AND
+        console.log("cadena" && "Valor de la derecha");
+        console.log(19 && "Valor de la derecha");
+        console.log([] && "Valor de la derecha");
+        
+        console.log(false && "Valor de derecha"); 
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
