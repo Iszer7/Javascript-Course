@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Asincronia en JavaScript</h1>
+    <img src="https://1.bp.blogspot.com/-E3ksTbDBmj4/WXzBb5G1wJI/AAAAAAAAB5I/Cl5if7O9xLQ8SZuYnfmvZtytecWGTP63QCLcBGAs/s1600/EventLoop.png">
+    <script>
+
+
+
+
+
+
+        //Callback -> es una funcion que se ejecuta despues de que otra lo haga, asincronismo. Es una funcion que puede ir como parametro de otra
+        function cuadradoCallback(value, callback) {
+            setTimeout(() => {
+                callback(value, value*value);       
+            }, 0 | Math.random() * 100);
+        }
+
+        cuadradoCallback(0, (value, result) => {
+            console.log("Inicia Callback");
+            console.log(`Callback: ${value}, ${result}`);
+
+            cuadradoCallback(1, (value, result) => {
+            console.log(`Callback: ${value}, ${result}`);
+             cuadradoCallback(2, (value, result) => {
+              console.log(`Callback: ${value}, ${result}`);
+               cuadradoCallback(3, (value, result) => {
+                console.log(`Callback: ${value}, ${result}`);
+               });
+              });
+            });
+          });
+        
+            
+
+        
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
