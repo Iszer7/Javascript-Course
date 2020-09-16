@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Asincronia en JavaScript</h1>
+    <img src="https://1.bp.blogspot.com/-E3ksTbDBmj4/WXzBb5G1wJI/AAAAAAAAB5I/Cl5if7O9xLQ8SZuYnfmvZtytecWGTP63QCLcBGAs/s1600/EventLoop.png">
+    <script>
+
+
+
+
+
+
+        //Asincronia
+      /* JS trabaja en un solo hilo principal, la asincronia ayuda a que se puedan hacer multiples hilos
+      
+      Procesamiento Single thread y Multi thread:
+        JS tiene un solo hilo de ejecucion, java script trabaja en LIFO
+
+      Operaciones de CPU y Operaciones de I / O:
+        JS pued ejecutar ambas, aunque se va a comportar como I / O
+        las operaciones de cpu son aquellas que pasan mas tiempo consumiendo el proceso de la misma, un loop por ejemplo
+        las operaciones de I / O son aquellas que pasan mas tiempo esperando la peticion del recurso solicitado, un formulario que esta esperando la devolucion del server
+      
+      Operacionse Concurrentes y Paralelas:
+        Concurrencia es cuando dos o mas tareas progresan simultaneamente, tal vez una empezo antes o despues
+        Paralelisto es cuando dos o mas tareas se ejecutan al mismo tiempo, pero empiezan al mismo tiempo
+
+      Operaciones Bloqueantes y No Bloqueantes:
+        Bloqueante se refiere a que siempre va haber una fase de espera cuando se ejecuta nuestro codigo
+        Una operacion bloqueante es aquella que no va a devolver el control de la app hasta que haya terminado su tarea
+        Una operacio no bloqueante es que se ejecutan y devuelven inmediatamente el control al hilo principal, sin importar si se terminaron o no
+
+      Operaciones Sincronicas y Asincronas:
+        Se refiere a cuando tendra lugar la respuesta
+        Sincrono, se refiere al tiempo presente osea inmediato
+        Asincrono, la respuesta se espera en un futuro. Osea devuelve el control al hilo. Usualmente es no bloqueante
+      */
+
+        //Codigo Sincrono bloqueante -> Este hilo queda bloqueado mientras espera una respuesta
+        //funcion anonima
+        (() => {
+            console.log("Codigo Sincrono"); //Para testear codigo http://latentflip.com/loupe/
+            console.log("Inicio");
+
+            function dos() {
+                console.log("Dos");
+            }
+
+            function uno() {
+                console.log("Uno");
+                dos();
+                console.log("Tres");
+            }
+
+            uno();
+            console.log("Fin");
+        })();
+
+        console.log("******************************");
+        //Codigo Asincrono no bloqueante -> 
+        (() => {
+            console.log("Codigo Asincrono");
+            console.log("Inicio");
+
+            function dos() {                //Mete un temporizador es un mecanismo de asincronismo
+                setTimeout(function () {
+                    console.log("Dos");
+                }, 1000);
+            }
+
+            function uno() {
+                setTimeout(function () {
+                    console.log("Uno");
+                }, 0);
+                dos();
+                console.log("Tres");
+            }
+
+            uno();
+            console.log("Fin");
+        })();
+
+        /*
+        Javascript usa un modelo asincrono y no bloqueante, 
+        con un lop de eventos implementado en un solo hilo,
+        (single thread) para operaciones de entrada y salida (input/output)
+        */
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
