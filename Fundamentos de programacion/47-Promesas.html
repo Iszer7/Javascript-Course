@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Asincronia en JavaScript</h1>
+    <img src="https://1.bp.blogspot.com/-E3ksTbDBmj4/WXzBb5G1wJI/AAAAAAAAB5I/Cl5if7O9xLQ8SZuYnfmvZtytecWGTP63QCLcBGAs/s1600/EventLoop.png">
+    <script>
+
+
+
+
+
+
+        //Las promesas trabajan con resolve y el reject, si la promesa se cumple se ejecuta el resolve y vicebersa
+
+
+
+
+        function cuadradoPromise(value) {
+            if(typeof value !== "number") return Promise.reject(`Error, el valor "${value}" ingresado no es un numero`);
+            
+            return new Promise((resolve, reject) => { 
+                setTimeout(() => {
+                resolve({           //Va a devolver un obj Promise
+                    value,          //Cuando se llama igual, se da por hecho y no se escribe
+                    result: value*value
+                });       
+            }, 0 | Math.random() * 100);
+            });
+        }
+
+        cuadradoPromise(0)
+            .then((objecto) => {        //then es el siguiente bloque que va a ejecutar
+                //console.log(objecto);
+                console.log("Inicio Promise");
+                console.log(`Promise: ${objecto.value}, ${objecto.result}`);
+                return cuadradoPromise(1);
+            })
+            .then(objecto => {
+                console.log(`Promise: ${objecto.value}, ${objecto.result}`);
+                return cuadradoPromise(2);
+            })
+            .then(objecto => {
+                console.log(`Promise: ${objecto.value}, ${objecto.result}`);
+                return cuadradoPromise(3);
+            })
+            .then(objecto => {
+                console.log(`Promise: ${objecto.value}, ${objecto.result}`);
+                return cuadradoPromise(4);
+            })
+            .then(objecto => {
+                console.log(`Promise: ${objecto.value}, ${objecto.result}`);
+                return cuadradoPromise(5);
+            })
+            .then(objecto => {
+                console.log(`Promise: ${objecto.value}, ${objecto.result}`);
+                console.log("Fin Promise");
+            })
+            .catch(err => console.error(err));
+        
+            
+
+        
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
