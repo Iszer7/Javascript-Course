@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de datos</title>
+  </head>
+
+  <body>
+    <h1>Nuevos tipos de datos</h1>
+    <img src="https://1.bp.blogspot.com/-E3ksTbDBmj4/WXzBb5G1wJI/AAAAAAAAB5I/Cl5if7O9xLQ8SZuYnfmvZtytecWGTP63QCLcBGAs/s1600/EventLoop.png">
+    <script>
+
+
+
+
+
+
+        //Symbol: Su valor se mantiene privado, y uso interno. Se suele usar como caracteristica de objetos, propiedad
+        //Crea una referencia unica, la buena practica es crearlo con constantes
+        let id = Symbol("hola");
+        let id2 = Symbol("hola");
+        console.log(id === id2);        //Aunque tenga el mismo nombre al ser simbolo valida a falso
+
+        const NOMBRE = Symbol("nombre");    //Dentro se pone a que referencia se refiere
+        const SALUDAR = Symbol("saludar");
+
+        const persona = {
+            //[] sabe que va a tener un valor symbol
+            [NOMBRE]: "Diego",   //Mantiene la propiedad en privado
+            edad: 24
+        }
+        console.log(persona);
+
+        persona.NOMBRE = "Diego Kippes";        //Se crea una propiedad nombre pero no symbol
+        console.log(persona);
+
+        console.log(persona.NOMBRE);        //Diego Kippes
+        console.log(persona[NOMBRE]);       //Diego
+
+        //Creando propiedad
+        persona[SALUDAR] = function () {
+            console.log("Buenas buenas");
+        }
+        console.log(persona);
+        persona[SALUDAR]();
+
+        //Recorrer propiedades dentro del objeto persona
+        for (const propiedad in persona) {
+            console.log(propiedad);
+            console.log(persona[propiedad]);    //Se comportan como si fueran propiedades privadas
+        }
+
+
+        //Para lista los symbolos
+        console.log(Object.getOwnPropertySymbols(persona));
+
+
+
+
+    </script>
+  </body>
+</html>
