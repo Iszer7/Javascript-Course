@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de datos</title>
+  </head>
+
+  <body>
+    <h1>Nuevos tipos de datos</h1>
+    <script>
+
+
+
+
+
+
+        //CUANDO EL WEAKMAP O WEAKSET SE NULIFICAN ESTAS SE ELIMINAN AUTOMATICAMENTE, AUMENTA EL RENDIMIENTO
+
+        
+        /*Da referencias debiles, mejora el rendimiento de nuestra aplicacion
+        Tienen carencias, no se puede iterar
+        Tampoco se pueden borrar directos con clear
+        Tampoco se pueden verificar su tamaño, size.
+        */
+        //WeakSets = Hermano pequeño del Sets.
+        //WeakMaps = Hermano pequeño del Maps.
+
+        //WeakSet: para almacenar los valores tenemos que hacerlo uno por uno
+        //const ws = WeakSet([1,2,33,4,5]); -> Tiraria error
+        const ws = new WeakSet();
+        let valor1 = {"valor1": 1};
+        let valor2 = {"valor2": 2};
+        let valor3 = {"valor3": 3};
+
+        ws.add(valor1);
+        ws.add(valor2);
+        console.log(ws);
+        
+        //Verificar si existe un elemento
+        console.log(ws.has(valor1));
+        console.log(ws.has(valor3));
+        
+        //Borrar un valor
+        ws.delete(valor2);
+        console.log(ws);
+
+        //setInterval(() => console.log(ws), 1000);     -> Muestra por consola cada 1s
+
+        //Si detecta un cambio a null o undefined borra la referencia, ocupa menos memoria
+        /*
+        setTimeout(() => {
+          valor1 = null;
+          valor2 = null;
+          valor3 = null;
+        }, 5000);
+        */
+
+
+        /*WealMaps*/
+        /*No se puede inicializar asi:
+        const wm = new WeakMap ([
+          ["nombre", "diego"]
+        ]);
+        */
+
+        const wm = new WeakMap();
+        let llave1 = {};
+        let llave2 = {};
+        let llave3 = {};
+
+        wm.set(llave1, 1);
+        wm.set(llave2, 2);
+        console.log(wm);
+
+        //Para obtener una referencia
+        console.log(wm.get(llave1));
+
+        //Para borrar un elemento
+        wm.delete(llave2);
+        console.log(wm);
+
+
+        //Cuando se nulifica lo que hace referencia al weakmap, estas se eliminan automaticamente
+
+        //setInterval(() => console.log(wm), 1000);     -> Muestra por consola cada 1s
+
+        //Si detecta un cambio a null o undefined borra la referencia, ocupa menos memoria
+        /*
+        setTimeout(() => {
+          llave1 = null;
+          llave2 = null;
+          llave3 = null;
+        }, 5000);
+        */
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
+
+
+
