@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de datos</title>
+  </head>
+
+  <body>
+    <h1>Nuevos tipos de datos</h1>
+    <script>
+
+
+
+
+
+
+
+        //Tipo de dato
+        //Maps son objetos que nos sirven para almacenar conjunto de valores asociados, es como un obj primitivo
+        const mapa = new Map();     //Los mapas y sets son tipo de dato complejos, no primitivos. Entonces podemos utilizar const sin problemas
+        //Para agregar valores
+        mapa.set("nombre", "Diego");
+        mapa.set("edad", "Kippes");
+        mapa.set("edad", 24);
+
+        console.log(mapa);
+        console.log(mapa.size);             //Devuelve el numero de elementos que tiene esta propiedad
+        console.log(mapa.has("correo"));    //Devuelve true or false, busca el elemento en el mapa
+        console.log(mapa.get("nombre"));    //Obtiene el nombre de la llave que quiero obtener
+        console.log(mapa.set("nombre", "pepito"));       //Sobrescribiendo un valor
+        mapa.delete("apellido");            //Borra una propiedad
+
+
+        //En map podemos generar en las llaves, un null, undefined, numero etc.. Y en los objetos solo string
+        mapa.set(19, "diecinueve");
+        mapa.set(false, "falso");
+        mapa.set({}, {});
+        console.log(mapa);
+
+        //Recorriendo un mapa
+        for (const [key, value] of mapa) {
+            console.log(`Llave: ${key}, Valor: ${value}`);
+        }
+
+
+        //Segunda forma de inicializarlos
+        const mapa2 = new Map([
+            ["nombre", "Daniela"],
+            ["edad", 20],
+            [null, "nulo"] 
+        ]);
+        console.log(mapa2);
+
+
+        //Se puede almacenar en una variable todas las llaves y en el otra variable todos los valores
+        const llavesMapa2 = [...mapa2.keys()];
+        const valoresMapa2 = [...mapa2.values()];
+
+        console.log(llavesMapa2);
+        console.log(valoresMapa2);
+        
+        
+        
+
+
+
+
+    </script>
+  </body>
+</html>
