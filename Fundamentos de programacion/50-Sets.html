@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de datos</title>
+  </head>
+
+  <body>
+    <h1>Nuevos tipos de datos</h1>
+    <script>
+
+
+
+
+
+
+
+        //Tipo de dato
+        //Sets: Es similar a un array pero de datos unicos
+        const set = new Set([1,2,3,3,4,5,true,false,false,true,{},"hola",{},"hola","hoLA"]);
+        console.log(set); //Elimino todo lo repetido, menos los objetos
+
+
+        //Otra forma de crearlo
+        const set2 = new Set();
+        set2.add(1);
+        set2.add(1);
+        set2.add(3);
+        set2.add(true);
+        set2.add(true);
+        set2.add({});
+
+        console.log(set2);
+        console.log(`El tamaño de set2 es: ${set2.size}`); //Da la cantidad de elementos que tiene
+
+        console.log("RECORRIENDO SET");
+        //Recorrer un Set
+        for (item of set) {
+            console.log(item);
+        }
+
+        console.log("RECORRIENDO SET2");
+        //Recorrer otra forma
+        set2.forEach(item => console.log(item));
+
+
+        console.log("ACCEDER A UN DATO SET");
+        //Acceder a un dato
+        let arr = Array.from(set);  //No puedo acceder al set, tengo que convertirlo en array y despues acceder
+        console.log(arr[0]);
+
+
+        //Metodo especial
+        set.delete("hoLA");         //Borra la palabra hoLA
+        console.log(set.has(19));   //Se fija si un dato existe dentro de una colleccion
+        set2.clear()                //Limpia el array, borra todo
+        console.log(set2); 
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
