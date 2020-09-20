@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevos tipos de datos</title>
+  </head>
+
+  <body>
+    <h1>Nuevos tipos de datos</h1>
+    <script>
+
+
+
+
+
+
+        //Generator tiene una sintaxis mas sencilla para generar iteradores
+        //Sirven para que una funcion se vuelva iterable
+        //Tambien nos permite manejar comportamiento asincrono
+        function* iterable () {     //Se usa el asterisco "*" para que sepa que es una func generadora
+          yield "hola";           //Yield es como un return, si no encuentra un yield termina la iteracion
+          console.log("Hola consola");
+          yield "hola 2";
+          console.log("Seguimos con mas intrucciones");      
+          yield "hola 3";
+          yield "hola 4";
+        }
+
+        let iterador = iterable();
+        //console.log(iterador.next());   //Ejecuta "hola", y done: false (porque no termino aun)
+        //console.log(iterador.next());   //Ejecuta "Hola consola", luego "hola 2" y done: false (porque no termino aun)
+        //console.log(iterador.next());   //Ejecuta "hola 3", y done: false (porque no termino aun)
+
+        //De manera con un ciclo for, para recorrer cada uno de los yield
+
+        for (let y of iterador) {
+          console.log(y);
+        }
+
+        //guardar en un arreglo los datos de una funcion generadora
+        const arr = [...iterable()];
+        console.log(arr);   //Guarda todos los yield
+
+
+        //Ejercicio de elevacion al cuadrado
+        function cuadrado(valor) {
+          setTimeout(() => {
+             return console.log({valor, resultado: valor*valor});
+          }, Math.random() * 1000);
+
+        }
+
+        function* generador() {   //Funcion generadora
+          console.log("Inicia Generator");
+          yield cuadrado(0);
+          yield cuadrado(1);
+          yield cuadrado(2);
+          yield cuadrado(3);
+          yield cuadrado(4);
+          yield cuadrado(5);
+          console.log("Termina Generator");
+        }
+
+        //Ejecutando la funcion
+        let gen = generador();
+
+        for (let y of gen) {
+          console.log(y);
+        }
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
