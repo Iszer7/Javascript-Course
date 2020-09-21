@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxies, copias de objetos</title>
+  </head>
+
+  <body>
+    <h1>Proxies, copias de objetos</h1>
+    <script>
+
+
+
+
+
+ 
+        //Mecanismo para generar propiedades de manera dinamica en un objeto
+        let aleatorio = Math.round(Math.random() *100 + 5);
+        const objetoUsuarios = {
+            propiedad: "Valor",
+            [`id_${aleatorio}`]: "Valor Aleatorio"       //Dentro del objeto tambien se puede crear propiedades dinamicas
+        };
+        console.log(objetoUsuarios);
+
+
+        
+        //Creandolo fuera del objeto
+        const usuarios = ["Diego", "Jon", "Rodri", "Eva", "Kala", "Rubi"];
+
+        usuarios.forEach((usuario, index) => objetoUsuarios[`id_${index}`] = usuario);
+
+        console.log(objetoUsuarios);
+
+
+        
+
+
+
+    </script>
+  </body>
+</html>
