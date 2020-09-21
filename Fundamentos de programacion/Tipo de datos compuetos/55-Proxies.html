@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asincronia en JavaScript</title>
+  </head>
+
+  <body>
+    <h1>Asincronia en JavaScript</h1>
+    <img src="https://1.bp.blogspot.com/-E3ksTbDBmj4/WXzBb5G1wJI/AAAAAAAAB5I/Cl5if7O9xLQ8SZuYnfmvZtytecWGTP63QCLcBGAs/s1600/EventLoop.png">
+    <script>
+
+
+
+
+        //Proxy, es un nuevo mecanismo que permite crear un objeto basado en un objeto literal inicial
+        //No usa clases a modelo a seguir, sino un objeto literal
+
+        //Objeto que vamos a usar para copiar sus propiedades
+        const persona = {
+            nombre: "",
+            apellido: "",
+            edad: 0
+        }
+
+        //Para manejar y poder ponerle valores
+        const manejador = { //Es un manejador, handler, si no tiene handler no va a permitir ponerle valor a las propiedades
+            set(objeto, propiedad, valor) { //Dentro de set podemos poner las validaciones, para no modificar la estructura del que se esta basando
+                if (Object.keys(objeto).indexOf(propiedad) === -1) {       //Se fija que efectivamente exista la propiedad
+                  return console.error(`La propiedad "${propiedad}" no existe en el objeto persona`);
+                }
+
+                if (  //Para validar un nombre o apellido con una expresion regular
+                  (propiedad === "nombre" || propiedad === "apellido") &&
+                  !(/^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/g.test(valor))
+                ) {
+                  return console.error(`La propiedad "${propiedad}" solo acepta letras y espacios en blanco`);
+                }
+                objeto[propiedad] = valor;
+            }
+        }
+
+        console.log(persona);
+        //Inicializamos la copia del objeto
+        const diego = new Proxy(persona, manejador);       //El objeto en que te basas y el manejador (validaciones)
+        
+        diego.nombre = "Diego454";
+        diego.nombre = "DiegoEscritoBien"
+        diego.apellido = "Kippes432";
+        diego.apellido = "KippesEscritoBien";
+        diego.edad = 4;
+        diego.twitter = "@dkippes";
+        
+        console.log(diego);
+
+        
+
+
+
+    </script>
+  </body>
+</html>
