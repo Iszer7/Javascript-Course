@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This</title>
+</head>
+
+<body>
+    <h1>.This</h1>
+
+
+
+
+
+
+    <script>
+        //This hace referencia a un objeto, al hacer log en un navegador devuelve Window en NodeJS el objeto Global
+        console.log(this);
+
+        console.log(this === window); //Devuelve true, porque devuelve window
+
+        this.nombre = "Contexto Global"; //
+        console.log(this.nombre); //Devuelve "Contexto Global" que se encuentra en window (nombre ="Contexto Global")
+
+        function imprimir() {
+            console.log(this.nombre); //Devuelve contexto global, porque todavia hace referencia a window
+        }
+
+        //Objeto 1
+        const obj = {
+            nombre: "Contexto Objeto",
+            imprimir: function () {
+                console.log(this.nombre);
+            }
+        }
+        obj.imprimir() //Al llamarla ahora no devuelve Contexto Global, sino el del objeto
+
+        //Objeto 2
+        const obj2 = {
+            nombre: "Contexto Objeto 2",
+            imprimir //Hace referencia al scope global de la funcion imprimir
+        }
+        obj2.imprimir(); //Al llamar al metodo imprimir dentro del obj2 esta devuelve "Contexto Objeto 2"
+
+        //Objeto 3
+        const obj3 = {
+            nombre: "Contexto Objeto",
+            imprimir: () => { //Imprime el contexto global, porque la arrow function no crea un scope
+                console.log(this.nombre);
+            }
+        }
+        obj3.imprimir();
+
+        //Funcion constructura que crea su propio scope
+        function Persona(nombre) {
+            this.nombre = nombre;
+            //return console.log(this.nombre);          //Esto devolveria el nombre perfectamente, porque si existe
+            /*
+            return function () { //funcion closure
+                console.log(this
+                .nombre); //Retornaria "Contexto Global", porque crea un nuevo scope. No tiene una propiedad nombre
+            }
+            */
+            return () => console.log(this
+                .nombre); //En este caso se soluciona con una arrow function, ya que no crea un nuevo scope
+        }
+
+        let diego = new Persona("Diego");
+    </script>
+
+
+
+
+
+</body>
+
+</html>
