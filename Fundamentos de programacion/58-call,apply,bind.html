@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>call, apply, bind</title>
+    <title>This - call, apply, bind</title>
 </head>
 
 <body>
-    <h1>call, apply, bind</h1>
+    <h1>This - call, apply, bind</h1>
 
 
 
@@ -16,7 +16,37 @@
 
 
     <script>
+        //
+        this.lugar = "Contexto Global";
 
+        function saludar(saludo, aQuien) {
+            console.log(`${saludo} ${aQuien} desde el ${this.lugar}`);
+        }
+        saludar(); //Va a devolver que esta en el contexto global
+
+        //Llamando a la funcion saludar, y dando de contexto al obj
+        const obj = {
+            lugar: "Contexto Objeto"
+        }
+        //Call y apply son parecidos, la diferencia es que al usar parametros call lo llama con "coma" y apply con arreglos
+        saludar.call(obj, "Hola", "Diego");
+        saludar.call(null, "Hi", "Pablo"); //Si pongo null hace referencia al objeto global
+        saludar.apply(obj, ["Hello,", "Kippes"]);
+
+        //Bind hace un enlace, muy similar a un arrow function
+        const persona = {
+            nombre: "Daniela",
+            saludar: function () {
+                console.log(`Hola ${this.nombre}`);
+            }
+        }
+
+        //En esta propiedad saludar
+        const otraPersona = {
+            saludar: persona.saludar.bind(
+                persona) //Enlazamos el contexto de persona, porque sino esta bind hace referencia global
+        }
+        otraPersona.saludar();
     </script>
 
 
