@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json</title>
+</head>
+
+<body>
+    <h1>Json</h1>
+    <a href="https://www.json.org/json-es.html">PAGINA DE JSON</a>
+
+
+
+
+
+
+    <script>
+        /*parse, de un objeto de texto a un valor valido para JS*/
+        /*stringify es lo contrario a parse, convierte valores manipulables de JS a cadena de texto*/
+        console.log(JSON);
+        console.log(JSON.parse("{}"));      //Deja de ser texto a pasar a ser un valor para JS
+        console.log(JSON.parse("[1,2,3]")); //Deja de ser texto a pasar a ser un valor para JS
+        console.log(JSON.parse("true"));    //Deja de ser texto a pasar a ser un valor para JS
+        console.log(JSON.parse(' "Hola mundo" '));
+        console.log(JSON.parse("null"));
+        //console.log(JSON.parse("undefined"));    //No lo devuelve porque no es un valor valido para JS
+
+
+        console.log(JSON.stringify([1,2,3]));
+        console.log(JSON.stringify({x:1,y:2,z:3}));
+        
+    </script>
+
+
+
+
+
+</body>
+
+</html>

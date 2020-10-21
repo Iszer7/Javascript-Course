@@ -1,0 +1,15 @@
+{
+    "cadena": "Diego",
+    "numero": "7",
+    "booleano": "true",
+    "arreglo": [
+        "correr",
+        "programar",
+        "dormir"
+    ],
+    "objeto": {
+        "twitter": "@kippes",
+        "email": "kippes.diego@gmail.com"
+    },
+    "nulo": "null"
+}
