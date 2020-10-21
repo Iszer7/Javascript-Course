@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB APIs</title>
+</head>
+
+<body>
+    <h1>WEB APIs</h1>
+    <p>Una API es una interfaz de programación de aplicaciones. Es un conjunto de rutinas que provee acceso a funciones de un determinado software</p>
+    <p>Manejo de eventos, formularios, consumo de datos con ajax y fetch, etc</p>
+    <h2>DOM: Document Object Model</h2>
+    <p>Es una interfase estandarizada, cada etiqueta de html es un nodo (elemento)</p>
+    <p>manipulacion de html mediante JS</p>
+    <h2>BOM: Browser Object Model</h2>
+    <p>No es una API estandar, actualmente los navegadores funcionan muy similar</p>
+    <p>detectar ubi del usuario, donde esta la ventana, manejo del historial, barra de dir.. etc</p>
+    <h2>CSSOM: CSS Object Model</h2>
+    <p>manipulacion de css mediante JS</p>
+    <p>control de eventos de animacion, etc</p>
+    <h2>WEB APIs</h2>
+    <ul>
+        <li>Eventos</li>
+        <li>Forms</li>
+        <li>AJAX - Fetch</li>
+        <li>History</li>
+        <li>Web Storage</li>
+        <li>Geolocation</li>
+        <li>Drag & Drop</li>
+        <li>Indexed DB</li>
+        <li>Canvas</li>
+        <li>MatchMedia</li>
+        <li>etc..</li>
+    </ul>
+
+
+
+
+
+
+    <script>
+        console.log(window); //navigator controlar diferentes propiedades, sistema operativo, idioma, geolocation, history etc
+        console.log(document); //Es el arbol del documento, que va a mapear la estructura de HTML
+    
+        let texto = "Hola, soy tu amigo el hombre araña y has guardado el archivo ;)"
+        const hablar = (texto) => speechSynthesis.
+        speak(new SpeechSynthesisUtterance(texto));
+
+        hablar(texto);
+    </script>
+
+
+
+
+
+</body>
+
+</html>
