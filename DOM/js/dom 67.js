@@ -31,4 +31,4 @@ console.log($cards.nextElementSibling);
 //Es un metodo - busca el ancestros del tipo de selector que nosotros le demos
 console.log($cards.closest("div")); //hacia arriba no hay ninguno que sea div
 console.log($cards.closest("body")); //Devuelve el body
-console.log($cards.children[3].closest("section"));
+console.log($cards.children[3].closest("section")); //Devuelve el section del hijo 3
