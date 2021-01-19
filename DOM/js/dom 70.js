@@ -1,5 +1,6 @@
 const $cards = document.querySelector(".cards"),
-    $newCard = document.createElement("figure");
+    $newCard = document.createElement("figure"),
+    $cloneCards = $cards.cloneNode(true); //Clona todo el contenido
 
 $newCard.innerHTML = `
 <img src="https://placeimg.com/200/200/any" alt="Any">
@@ -15,5 +16,8 @@ $newCard.classList.add("card");
 //Insertarla antes de un nodo que tomemos como referencia
 //$cards.insertBefore($newCard, $cards.firstElementChild);
 
-//Para eliminar un nodo
-$cards.removeChild($cards.lastElementChild)
+//Para eliminar un nodo - En este caso elimina el ultimo hijo
+//$cards.removeChild($cards.lastElementChild)
+
+//Pone los elementos clonados
+//document.body.appendChild($cloneCards); 
